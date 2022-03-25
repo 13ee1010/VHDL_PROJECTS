@@ -44,9 +44,10 @@ begin  -- architecture rtl
                  if( ce = '1') then 
                     
                     if(wr = '1') then 
-                        -- read the data first from given location before performing the write operation. 
-                        RAM(conv_integer(addr)) <= di;    
+                        RAM(conv_integer(addr)) <= di;  
+                        --new content is made available immediately
                         do <= RAM(conv_integer(addr));
+              
                     end if;
                     
                  end if;
